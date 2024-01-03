@@ -8,7 +8,12 @@ class AppStrings {
       forgotPassword = "Forgot Password?",
       login = "Login",
       signUp = "Sign Up",
+      signUpNow = "Sign Up Now",
       dontHaveAccount = "Don't have an account?",
       welcome = "Welcome",
-      welcomePara = "We are excited you are login here !";
+      welcomePara = "We are excited you are login here !",
+      user="User",
+      search="Search doctor",
+      fullname = "Full Name",
+      alreadyHaveAccount = "already have account";
 }

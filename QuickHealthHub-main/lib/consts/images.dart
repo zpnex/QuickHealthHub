@@ -5,4 +5,5 @@ class AppAssets {
       icHeart = "assets/images/heart.png",
       icTooth = "assets/images/tooth.png",
       loginDoctor = "assets/images/loginDoctor.png";
+     
 }

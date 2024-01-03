@@ -6,21 +6,21 @@ class AppFonts {
 
 class AppSizes {
   static const size12 = 12,
-      size14 = 14,
-      size16 = 16,
-      size18 = 18,
-      size20 = 20,
-      size22 = 22,
-      size24 = 24,
-      size34 = 34;
+      size14 = 14.0,
+      size16 = 16.0,
+      size18 = 18.0,
+      size20 = 20.0,
+      size22 = 22.0,
+      size24 = 24.0,
+      size34 = 34.0;
 }
 
 class AppStyles {
   static normal({String? title, Color? color = Colors.grey, double? size}) {
-    title!.text.size(size).color(color).make();
+   return title!.text.size(size).color(color).make();
   }
 
   static bold({String? title, Color? color = Colors.grey, double? size}) {
-    title!.text.size(size).color(color).fontFamily(AppFonts.nunitoBold).make();
+   return title!.text.size(size).color(color).fontFamily(AppFonts.nunitoBold).make();
   }
 }

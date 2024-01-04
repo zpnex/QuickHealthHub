@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qhhub/consts/consts.dart';
+import 'package:qhhub/consts/lists.dart';
 import 'package:qhhub/resources/components/customTextField.dart';
 
 class HomeView extends StatelessWidget {
@@ -40,35 +41,109 @@ class HomeView extends StatelessWidget {
             ),
           ),
           20.heightBox,
-          SizedBox(
-            height: 100,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 6,
-                itemBuilder: (BuildContext contex, int index) {
-                  return Container(
-                    padding: const EdgeInsets.all(12),
-                    margin: const EdgeInsets.only(right: 8),
-                    color: Colors.red,
-                    height: 44,
-                    width: 44,
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          AppAssets.icBrain,
-                          width: 28,
-                          color: AppColors.whiteColor,
-                        ),
-                        5.heightBox,
-                        AppStyles.normal(
-                            title: "Body",
-                            color: AppColors.whiteColor,
-                            size: AppSizes.size14)
-                      ],
-                    ),
-                  );
-                }),
-          )
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 100,
+                  child: ListView.builder(
+                      physics: const BouncingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 6,
+                      itemBuilder: (BuildContext contex, int index) {
+                        return GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: AppColors.blueColor,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            padding: const EdgeInsets.all(12),
+                            margin: const EdgeInsets.only(right: 8),
+                            height: 44,
+                            width: 44,
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  iconList[index],
+                                  width: 30,
+                                  color: AppColors.whiteColor,
+                                ),
+                                5.heightBox,
+                                AppStyles.normal(
+                                    title: iconsTitleList[index],
+                                    color: AppColors.whiteColor,
+                                    size: AppSizes.size14)
+                              ],
+                            ),
+                          ),
+                        );
+                      }),
+                ),
+                20.heightBox,
+                Align(
+                    alignment: Alignment.centerRight,
+                    child: AppStyles.bold(
+                        title: "Popular Doctors",
+                        color: AppColors.blueColor,
+                        size: AppSizes.size18)),
+                10.heightBox,
+                SizedBox(
+                  height: 150,
+                  child: ListView.builder(
+                      physics: const BouncingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 7,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          clipBehavior: Clip.hardEdge,
+                          decoration: BoxDecoration(
+                              color: AppColors.bgDarkColor,
+                              borderRadius: BorderRadius.circular(12)),
+                          margin: const EdgeInsets.only(right: 8),
+                          //color: Colors.red,
+                          height: 100,
+                          width: 100,
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 150,
+                                alignment: Alignment.center,
+                                color: AppColors.blueColor,
+                                child: Image.asset(
+                                  AppAssets.loginDoctor,
+                                  width: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              5.heightBox,
+                              AppStyles.normal(title: "Doctor Name"),
+                              5.heightBox,
+                              AppStyles.normal(
+                                  title: "Category", color: Colors.black54),
+                            ],
+                          ),
+                        );
+                      }),
+                ),
+                5.heightBox,
+                GestureDetector(
+                    onTap: () {},
+                    child: Align(
+                        alignment: Alignment.centerRight,
+                        child: AppStyles.normal(
+                            title: "View All", color: AppColors.blueColor))),
+                Row(
+                  children: List.generate(
+                      4,
+                      (index) => Container(
+                            child: Column(),
+                          )),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

@@ -1,3 +1,5 @@
+import 'package:qhhub/consts/consts.dart';
+
 class AppStrings {
   static String appName = "QuickHeathHub",
       welcomeBack = "Welcome Back !!!",
@@ -12,8 +14,16 @@ class AppStrings {
       dontHaveAccount = "Don't have an account?",
       welcome = "Welcome",
       welcomePara = "We are excited you are login here !",
-      user="User",
-      search="Search doctor",
+      user = "User",
+      search = "Search doctor",
       fullname = "Full Name",
-      alreadyHaveAccount = "already have account";
+      alreadyHaveAccount = "already have account",
+      brain = "Brain",
+      excretory = "Excretory",
+      eye = "Eye",
+      heart = "Heart",
+      tooth = "Tooth",
+      leg = "Leg";
 }
+
+

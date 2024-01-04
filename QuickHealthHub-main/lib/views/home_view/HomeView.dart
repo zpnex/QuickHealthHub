@@ -134,12 +134,29 @@ class HomeView extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: AppStyles.normal(
                             title: "View All", color: AppColors.blueColor))),
+                20.heightBox,            
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: List.generate(
                       4,
-                      (index) => Container(
-                            child: Column(),
-                          )),
+                      (index)=>Container(
+                        decoration: BoxDecoration(
+                        color: AppColors.blueColor,
+                        borderRadius: BorderRadius.circular(12)),
+                        padding: const EdgeInsets.all(12),
+                        
+                        child: Column(
+                                    children: [
+                          
+                                    Image.asset(AppAssets.icBrain,width: 25, color: AppColors.whiteColor),
+                                    5.heightBox,
+                                    AppStyles.normal(title: "Lab Test",color: AppColors.whiteColor)
+                                  ],
+                          
+                                ),
+                              )
+                        
+                      ),
                 ),
               ],
             ),

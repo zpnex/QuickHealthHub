@@ -3,6 +3,7 @@ import 'package:qhhub/consts/consts.dart';
 import 'package:qhhub/resources/components/customButton.dart';
 import 'package:qhhub/resources/components/customTextField.dart';
 import 'package:qhhub/views/home_view/HomeView.dart';
+import 'package:qhhub/views/home_view/Home.dart';
 import 'package:qhhub/views/signup_view/SignupView.dart';
 
 class LoginView extends StatelessWidget {
@@ -51,7 +52,7 @@ class LoginView extends StatelessWidget {
                       CustomButton(
                         buttonText: AppStrings.login,
                         onTap: () {
-                          Get.to(() => const HomeView());
+                          Get.to(() => const Home());
                         },
                       ),
                       20.heightBox,

@@ -23,6 +23,9 @@ class AppStrings {
       eye = "Eye",
       heart = "Heart",
       tooth = "Tooth",
+      category="Category",
+      doctor="Doctor Login",
+      setings="Settings",
       leg = "Leg";
 }
 

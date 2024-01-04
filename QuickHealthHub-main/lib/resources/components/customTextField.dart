@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qhhub/consts/colors.dart';
 
 class CustomTextField extends StatefulWidget {
   final String hint;
@@ -19,7 +20,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: AppColors.blueColor,
       decoration: InputDecoration(
+        
+        isDense: true,
         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: widget.boaderColor)),
         enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: widget.boaderColor)),
           border: OutlineInputBorder(

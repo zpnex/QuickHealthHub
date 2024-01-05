@@ -1,6 +1,9 @@
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/route_manager.dart';
 import 'package:qhhub/consts/consts.dart';
 import 'package:qhhub/consts/lists.dart';
 import 'package:qhhub/resources/components/customTextField.dart';
+import 'package:qhhub/views/doctor_profile_view/DoctorProfileView.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -95,33 +98,38 @@ class HomeView extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: 7,
                       itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          clipBehavior: Clip.hardEdge,
-                          decoration: BoxDecoration(
-                              color: AppColors.bgDarkColor,
-                              borderRadius: BorderRadius.circular(12)),
-                          margin: const EdgeInsets.only(right: 8),
-                          //color: Colors.red,
-                          height: 100,
-                          width: 100,
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 150,
-                                alignment: Alignment.center,
-                                color: AppColors.blueColor,
-                                child: Image.asset(
-                                  AppAssets.loginDoctor,
-                                  width: 100,
-                                  fit: BoxFit.cover,
+                        return GestureDetector(
+                          onTap: () {
+                            Get.to(() => const DoctorProfileView());
+                          },
+                          child: Container(
+                            clipBehavior: Clip.hardEdge,
+                            decoration: BoxDecoration(
+                                color: AppColors.bgDarkColor,
+                                borderRadius: BorderRadius.circular(12)),
+                            margin: const EdgeInsets.only(right: 8),
+                            //color: Colors.red,
+                            height: 100,
+                            width: 100,
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 150,
+                                  alignment: Alignment.center,
+                                  color: AppColors.blueColor,
+                                  child: Image.asset(
+                                    AppAssets.loginDoctor,
+                                    width: 100,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),
-                              5.heightBox,
-                              AppStyles.normal(title: "Doctor Name"),
-                              5.heightBox,
-                              AppStyles.normal(
-                                  title: "Category", color: Colors.black54),
-                            ],
+                                5.heightBox,
+                                AppStyles.normal(title: "Doctor Name"),
+                                5.heightBox,
+                                AppStyles.normal(
+                                    title: "Category", color: Colors.black54),
+                              ],
+                            ),
                           ),
                         );
                       }),
@@ -133,29 +141,27 @@ class HomeView extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: AppStyles.normal(
                             title: "View All", color: AppColors.blueColor))),
-                20.heightBox,            
+                20.heightBox,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: List.generate(
                       4,
-                      (index)=>Container(
-                        decoration: BoxDecoration(
-                        color: AppColors.blueColor,
-                        borderRadius: BorderRadius.circular(12)),
-                        padding: const EdgeInsets.all(12),
-                        
-                        child: Column(
-                                    children: [
-                          
-                                    Image.asset(AppAssets.icBrain,width: 25, color: AppColors.whiteColor),
-                                    5.heightBox,
-                                    AppStyles.normal(title: "Lab Test",color: AppColors.whiteColor)
-                                  ],
-                          
-                                ),
-                              )
-                        
-                      ),
+                      (index) => Container(
+                            decoration: BoxDecoration(
+                                color: AppColors.blueColor,
+                                borderRadius: BorderRadius.circular(12)),
+                            padding: const EdgeInsets.all(12),
+                            child: Column(
+                              children: [
+                                Image.asset(AppAssets.icBrain,
+                                    width: 25, color: AppColors.whiteColor),
+                                5.heightBox,
+                                AppStyles.normal(
+                                    title: "Lab Test",
+                                    color: AppColors.whiteColor)
+                              ],
+                            ),
+                          )),
                 ),
               ],
             ),

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:qhhub/consts/consts.dart';
 import 'package:qhhub/views/login_view/loginView.dart';
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       theme: ThemeData(fontFamily: AppFonts.nunito),
       debugShowCheckedModeBanner: false,
-      home: LoginView()
+      home: const LoginView()
      
     );
   }

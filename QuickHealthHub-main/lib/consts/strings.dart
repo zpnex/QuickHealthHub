@@ -1,4 +1,3 @@
-import 'package:qhhub/consts/consts.dart';
 
 class AppStrings {
   static String appName = "QuickHeathHub",
@@ -26,7 +25,10 @@ class AppStrings {
       category="Category",
       doctor="Doctor Login",
       setings="Settings",
-      leg = "Leg";
+      leg = "Leg",
+      changePassword = "Change Password",
+      termsAndConditions = "Terms & Conditions",
+      signOut = "Sign Out";
 }
 
 

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:qhhub/consts/consts.dart';
 import 'package:qhhub/consts/lists.dart';
 
@@ -11,7 +10,7 @@ class CategoryView extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         title:
-            AppStyles.bold(title: AppStrings.category, size: AppSizes.size18),
+            AppStyles.bold(title: AppStrings.category, size: AppSizes.size18, color: AppColors.whiteColor,),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -25,20 +24,37 @@ class CategoryView extends StatelessWidget {
           ),
           itemCount: iconList.length,
           itemBuilder: (BuildContext context, int index) {
-            return Container(
-              decoration: BoxDecoration( 
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.green,
-              ),
-              child: Column(
-                children: [
-                  Image.asset(iconList[index],width: 60,color: AppColors.whiteColor,),
-                  const Divider(
-
-                    color: Colors.white,
-                  ),
-                  20.heightBox,
-                ],
+            return GestureDetector(
+              onTap: () {},
+              child: Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: AppColors.bgDarkColor,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Align(
+                        alignment: Alignment.center,
+                        child: Image.asset(
+                          iconList[index],
+                          width: 60,
+                          color: Vx.randomPrimaryColor,
+                        )),
+                    30.heightBox,
+                    AppStyles.bold(
+                        title: iconsTitleList[index],
+                        color: AppColors.textColor,
+                        size: AppSizes.size16),
+                    10.heightBox,
+                    AppStyles.normal(
+                        title: "13 specialists",
+                        color: AppColors.textColor.withOpacity(0.5),
+                        size: AppSizes.size12),
+                  ],
+                ),
               ),
             );
           },

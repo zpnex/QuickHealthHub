@@ -5,7 +5,7 @@ class AppFonts {
 }
 
 class AppSizes {
-  static const size12 = 12,
+  static const size12 = 12.0,
       size14 = 14.0,
       size16 = 16.0,
       size18 = 18.0,

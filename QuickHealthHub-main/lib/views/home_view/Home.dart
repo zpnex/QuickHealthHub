@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:qhhub/consts/colors.dart';
 import 'package:qhhub/views/category_view/CategoryView.dart';
 import 'package:qhhub/views/home_view/HomeView.dart';
+import 'package:qhhub/views/login_view/loginView.dart';
+import 'package:qhhub/views/settings_view/settingsView.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -14,14 +15,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int selectedIndex = 0;
   List screenList = [
-    HomeView(),
+    const HomeView(),
     const CategoryView(),
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.blue,
-    ),
+    const LoginView(),
+    const SettingsView(),
   ];
 
   @override

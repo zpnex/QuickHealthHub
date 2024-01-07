@@ -1,5 +1,7 @@
+import 'package:get/route_manager.dart';
 import 'package:qhhub/consts/consts.dart';
 import 'package:qhhub/consts/lists.dart';
+import 'package:qhhub/views/category_details_view/CategoryDetailsView.dart';
 
 class CategoryView extends StatelessWidget {
   const CategoryView({super.key});
@@ -25,7 +27,9 @@ class CategoryView extends StatelessWidget {
           itemCount: iconList.length,
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Get.to(() => const CategoryDetailsView());
+              },
               child: Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(

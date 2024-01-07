@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qhhub/consts/colors.dart';
+import 'package:qhhub/views/appointment_view/AppointmentView.dart';
 import 'package:qhhub/views/category_view/CategoryView.dart';
 import 'package:qhhub/views/home_view/HomeView.dart';
 import 'package:qhhub/views/login_view/loginView.dart';
@@ -16,6 +17,7 @@ class _HomeState extends State<Home> {
   int selectedIndex = 0;
   List screenList = [
     const HomeView(),
+    const AppointmentView(),
     const CategoryView(),
     const LoginView(),
     const SettingsView(),
@@ -45,6 +47,7 @@ class _HomeState extends State<Home> {
           },
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.book),label: "Appointment"),
             BottomNavigationBarItem(icon: Icon(Icons.category),label: "Category"),
             BottomNavigationBarItem(icon: Icon(Icons.person),label: "Doctor"),
             BottomNavigationBarItem(icon: Icon(Icons.settings),label: "Setting"),

@@ -1,8 +1,6 @@
-import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:get/route_manager.dart';
 import 'package:qhhub/consts/consts.dart';
 import 'package:qhhub/consts/lists.dart';
 import 'package:qhhub/controllers/home_controller.dart';

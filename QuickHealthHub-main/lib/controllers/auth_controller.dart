@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
@@ -12,13 +10,13 @@ class AuthController extends GetxController {
   var fullnameController = TextEditingController();
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
-  var categoryController = TextEditingController();
-  var sevicesController = TextEditingController();
-  var addressController = TextEditingController();
-  var phoneController = TextEditingController();
-  var timingController = TextEditingController();
   var aboutController = TextEditingController();
-  
+  var addressController = TextEditingController();
+  var seviceController = TextEditingController();
+  var timingController = TextEditingController();
+  var phoneController = TextEditingController();
+  var categoryController = TextEditingController();
+
   UserCredential? userCredential;
 
   isUserAlreadyLoggedIn() async {
@@ -57,14 +55,28 @@ class AuthController extends GetxController {
 
   storeUserData(
       String uid, String fullname, String email, bool isDoctor) async {
-    var store = FirebaseFirestore.instance.collection('user').doc(uid);
+    var store = FirebaseFirestore.instance
+        .collection(isDoctor ? 'doctors' : 'user')
+        .doc(uid);
     if (isDoctor) {
-      await store.set({});
+      await store.set({
+        'docAbout': aboutController.text,
+        'docAddress': addressController.text,
+        'docCategory': categoryController.text,
+        'docName': fullname,
+        'docPhone': phoneController.text,
+        'docServices': seviceController.text,
+        'docTiming': timingController.text,
+        'docId': FirebaseAuth.instance.currentUser?.uid,
+        'docRating': 1,
+        'docEmail': email,
+      });
+    } else {
+      await store.set({
+        'fullname': fullname,
+        'email': email,
+      });
     }
-    await store.set({
-      'fullname': fullname,
-      'email': email,
-    });
   }
 
   signout() async {

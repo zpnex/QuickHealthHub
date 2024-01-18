@@ -3,7 +3,6 @@ import 'package:qhhub/consts/consts.dart';
 import 'package:qhhub/controllers/auth_controller.dart';
 import 'package:qhhub/resources/components/customButton.dart';
 import 'package:qhhub/resources/components/customTextField.dart';
-import 'package:qhhub/views/home_view/Home.dart';
 import 'package:qhhub/views/loginView/loginView.dart';
 
 class SignupView extends StatefulWidget {
@@ -83,7 +82,7 @@ class _SignupViewState extends State<SignupView> {
                             10.heightBox,
                             CustomTextField(
                                 hint: "Services",
-                                textController: controller.sevicesController),
+                                textController: controller.seviceController),
                             10.heightBox,
                             CustomTextField(
                                 hint: "Address",

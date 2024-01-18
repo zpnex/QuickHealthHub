@@ -1,6 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:get/route_manager.dart';
 import 'package:qhhub/consts/consts.dart';
 import 'package:qhhub/controllers/auth_controller.dart';
 import 'package:qhhub/resources/components/customButton.dart';

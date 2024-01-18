@@ -1,11 +1,17 @@
+import 'package:get/get.dart';
+import 'package:get/route_manager.dart';
 import 'package:qhhub/consts/consts.dart';
 import 'package:qhhub/consts/lists.dart';
+import 'package:qhhub/controllers/auth_controller.dart';
+import 'package:qhhub/controllers/settings_controller.dart';
+import 'package:qhhub/views/loginView/loginView.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(SettingsController());
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
@@ -15,32 +21,38 @@ class SettingsView extends StatelessWidget {
           size: AppSizes.size18,
         ),
       ),
-      body: Column(
-        children: [
-          ListTile(
-            leading: CircleAvatar(
-              child: Image.asset(AppAssets.loginDoctor),
+      body: Obx(()=>
+      controller.isLoading.value ? const Center(child: CircularProgressIndicator(),):
+         Column(
+          children: [
+            ListTile(
+              leading: CircleAvatar(child: Image.asset(AppAssets.loginDoctor)),
+              title: AppStyles.bold(title: controller.username.value),
+              subtitle: AppStyles.normal(title: controller.email.value),
             ),
-            title: AppStyles.bold(title: "UserName"),
-            subtitle: AppStyles.normal(title: "userName@gmail.com"),
-          ),
-          const Divider(),
-          10.heightBox,
-          ListView(
-            shrinkWrap: true,
-            children: List.generate(
-              settingsList.length,
-              (index) => ListTile(
-                onTap: () {},
-                leading: Icon(
-                  settingsListIcons[index],
-                  color: AppColors.blueColor,
+            const Divider(),
+            10.heightBox,
+            ListView(
+              shrinkWrap: true,
+              children: List.generate(
+                settingsList.length,
+                (index) => ListTile(
+                  onTap: () {
+                    if (index == 2) {
+                      AuthController().signout();
+                      Get.offAll(() => const LoginView());
+                    }
+                  },
+                  leading: Icon(
+                    settingsListIcons[index],
+                    color: AppColors.blueColor,
+                  ),
+                  title: AppStyles.bold(title: settingsList[index]),
                 ),
-                title: AppStyles.bold(title: settingsList[index]),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

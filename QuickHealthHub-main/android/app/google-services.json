@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "344917595119",
+    "project_id": "quickhealthhub",
+    "storage_bucket": "quickhealthhub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344917595119:android:7d036078a6465ae3ee9c1a",
+        "android_client_info": {
+          "package_name": "com.example.qhhub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb2OQHtzs5TLaOBz9gKLYwYpVLdMjGHCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

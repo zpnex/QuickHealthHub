@@ -1,9 +1,22 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:get/route_manager.dart';
 import 'package:qhhub/consts/consts.dart';
+import 'package:qhhub/firebase_options.dart';
+// import 'package:qhhub/resources/components/waitingScreen.dart';
 import 'package:qhhub/views/login_view/loginView.dart';
 
-
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+ 
+    await Firebase.initializeApp(
+// Replace with actual values
+options: const FirebaseOptions(
+  apiKey: "AIzaSyBb2OQHtzs5TLaOBz9gKLYwYpVLdMjGHCU",
+  appId: "1:344917595119:android:7d036078a6465ae3ee9c1a",
+  messagingSenderId: "344917595119",
+  projectId: "quickhealthhub",
+),
+  );
   runApp(const MyApp());
 }
 
@@ -13,11 +26,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData(fontFamily: AppFonts.nunito),
-      debugShowCheckedModeBanner: false,
-      home: const LoginView()
-     
-    );
+        theme: ThemeData(fontFamily: AppFonts.nunito),
+        debugShowCheckedModeBanner: false,
+        home: const LoginView());
   }
 }
 

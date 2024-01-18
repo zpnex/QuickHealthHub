@@ -1,8 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../consts/consts.dart';
 
 class AppointmentDetailsView extends StatelessWidget {
-  const AppointmentDetailsView({super.key});
+  final DocumentSnapshot doc;
+
+  const AppointmentDetailsView({super.key,required this.doc});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +13,7 @@ class AppointmentDetailsView extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         title: AppStyles.bold(
-          title: "Doctor Name",
+          title: doc['appWithName'],
           size: AppSizes.size18,
           color: AppColors.whiteColor,
         ),
@@ -21,21 +24,20 @@ class AppointmentDetailsView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppStyles.bold(title: "Select Appointment Day"),
-            AppStyles.normal(title: "Selected Day"),
+            AppStyles.normal(title: doc['appDay']),
             10.heightBox,
             AppStyles.bold(title: "Select Appointment Time"),
-            AppStyles.normal(title: "Selected Time"),
+            AppStyles.normal(title: doc['appTime']),
             10.heightBox,
             AppStyles.bold(title: "Mobile Number"),
-            AppStyles.normal(title: "Mobile Number"),
-            10.heightBox,
+            AppStyles.normal(title: doc['appMobile']),
+            10.heightBox, 
             AppStyles.bold(title: "Full Name"),
-            AppStyles.normal(title: "Full Name"),
+            AppStyles.normal(title:doc['appName']),
             10.heightBox,
             AppStyles.bold(title: "Message"),
-            AppStyles.normal(title: "Message"),
+            AppStyles.normal(title: doc['appMsg']),
             10.heightBox,
-            
           ],
         ),
       ),

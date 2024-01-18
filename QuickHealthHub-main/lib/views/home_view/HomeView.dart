@@ -1,7 +1,13 @@
+import 'dart:developer';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:qhhub/consts/consts.dart';
 import 'package:qhhub/consts/lists.dart';
+import 'package:qhhub/controllers/home_controller.dart';
 import 'package:qhhub/resources/components/customTextField.dart';
+import 'package:qhhub/views/category_details_view/CategoryDetailsView.dart';
 import 'package:qhhub/views/doctor_profile_view/DoctorProfileView.dart';
 
 class HomeView extends StatelessWidget {
@@ -9,6 +15,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(HomeController());
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
@@ -54,7 +61,10 @@ class HomeView extends StatelessWidget {
                       itemCount: 6,
                       itemBuilder: (BuildContext contex, int index) {
                         return GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(() => CategoryDetailsView(
+                                catName: iconsTitleList[index]));
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                               color: AppColors.blueColor,
@@ -90,49 +100,66 @@ class HomeView extends StatelessWidget {
                         color: AppColors.blueColor,
                         size: AppSizes.size18)),
                 10.heightBox,
-                SizedBox(
-                  height: 150,
-                  child: ListView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 7,
-                      itemBuilder: (BuildContext context, int index) {
-                        return GestureDetector(
-                          onTap: () {
-                            Get.to(() => const DoctorProfileView());
-                          },
-                          child: Container(
-                            clipBehavior: Clip.hardEdge,
-                            decoration: BoxDecoration(
-                                color: AppColors.bgDarkColor,
-                                borderRadius: BorderRadius.circular(12)),
-                            margin: const EdgeInsets.only(right: 8),
-                            //color: Colors.red,
-                            height: 100,
-                            width: 100,
-                            child: Column(
-                              children: [
-                                Container(
-                                  width: 150,
-                                  alignment: Alignment.center,
-                                  color: AppColors.blueColor,
-                                  child: Image.asset(
-                                    AppAssets.loginDoctor,
-                                    width: 100,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                5.heightBox,
-                                AppStyles.normal(title: "Doctor Name"),
-                                5.heightBox,
-                                AppStyles.normal(
-                                    title: "Category", color: Colors.black54),
-                              ],
-                            ),
-                          ),
+                FutureBuilder<QuerySnapshot>(
+                    future: controller.getDoctorList(),
+                    builder: (BuildContext context,
+                        AsyncSnapshot<QuerySnapshot> snapshot) {
+                      if (!snapshot.hasData) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
                         );
-                      }),
-                ),
+                      } else {
+                        var data = snapshot.data?.docs;
+
+                        return SizedBox(
+                          height: 150,
+                          child: ListView.builder(
+                              physics: const BouncingScrollPhysics(),
+                              scrollDirection: Axis.horizontal,
+                              itemCount: data?.length ?? 0,
+                              itemBuilder: (BuildContext context, int index) {
+                                return GestureDetector(
+                                  onTap: () {
+                                    Get.to(() =>
+                                        DoctorProfileView(doc: data[index]));
+                                  },
+                                  child: Container(
+                                    clipBehavior: Clip.hardEdge,
+                                    decoration: BoxDecoration(
+                                        color: AppColors.bgDarkColor,
+                                        borderRadius:
+                                            BorderRadius.circular(12)),
+                                    margin: const EdgeInsets.only(right: 8),
+                                    //color: Colors.red,
+                                    height: 100,
+                                    width: 100,
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          width: 150,
+                                          alignment: Alignment.center,
+                                          color: AppColors.blueColor,
+                                          child: Image.asset(
+                                            AppAssets.loginDoctor,
+                                            width: 100,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                        5.heightBox,
+                                        AppStyles.normal(
+                                            title: data![index]['docName']),
+                                        5.heightBox,
+                                        AppStyles.normal(
+                                            title: data[index]['docCategory'],
+                                            color: Colors.black54),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              }),
+                        );
+                      }
+                    }),
                 5.heightBox,
                 GestureDetector(
                     onTap: () {},

@@ -6,8 +6,15 @@ import 'package:qhhub/resources/components/customTextField.dart';
 import 'package:qhhub/views/home_view/Home.dart';
 import 'package:qhhub/views/loginView/loginView.dart';
 
-class SignupView extends StatelessWidget {
+class SignupView extends StatefulWidget {
   const SignupView({Key? key}) : super(key: key);
+
+  @override
+  State<SignupView> createState() => _SignupViewState();
+}
+
+class _SignupViewState extends State<SignupView> {
+  var isDoctor = false;
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +60,46 @@ class SignupView extends StatelessWidget {
                       CustomTextField(
                           hint: AppStrings.password,
                           textController: controller.passwordController),
+                      10.heightBox,
+                      SwitchListTile(
+                        title: "Sign up as a doctor".text.make(),
+                          value: isDoctor,
+                          onChanged: (newValue) {
+                            setState(() {
+                              isDoctor = newValue;
+                            });
+                          }),
+                      Visibility(
+                        visible: isDoctor,
+                        child: Column(
+                          children: [
+                            CustomTextField(
+                                hint: "About",
+                                textController: controller.aboutController),
+                            10.heightBox,
+                            CustomTextField(
+                                hint: "Category",
+                                textController: controller.categoryController),
+                            10.heightBox,
+                            CustomTextField(
+                                hint: "Services",
+                                textController: controller.sevicesController),
+                            10.heightBox,
+                            CustomTextField(
+                                hint: "Address",
+                                textController: controller.addressController),
+                            10.heightBox,
+                            CustomTextField(
+                                hint: "Phone Number",
+                                textController: controller.phoneController),
+                            10.heightBox,
+                            CustomTextField(
+                                hint: "Timing",
+                                textController: controller.timingController),
+                            10.heightBox,
+                          ],
+                        ),
+                      ),
                       20.heightBox,
                       Align(
                           alignment: Alignment.centerRight,
@@ -62,7 +109,7 @@ class SignupView extends StatelessWidget {
                       CustomButton(
                         buttonText: AppStrings.signUp,
                         onTap: () async {
-                          await controller.signupUser();
+                          await controller.signupUser(isDoctor);
                           if (controller.userCredential != null) {
                             Get.offAll(() => const LoginView());
                           }

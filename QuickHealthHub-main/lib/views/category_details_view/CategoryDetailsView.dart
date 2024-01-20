@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:qhhub/consts/consts.dart';
-import 'package:qhhub/views/doctor_profile_view/DoctorProfileView.dart';
+import 'package:sampleapp/consts/consts.dart';
+import 'package:sampleapp/views/doctor_profile_view/DoctorProfileView.dart';
 
 class CategoryDetailsView extends StatelessWidget {
   final String catName;

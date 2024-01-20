@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:qhhub/consts/consts.dart';
+import 'package:sampleapp/consts/consts.dart';
 
 class HomeController extends GetxController {
   var searchQueryController = TextEditingController();

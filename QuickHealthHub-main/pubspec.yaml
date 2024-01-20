@@ -1,22 +1,21 @@
-name: qhhub
+name: sampleapp
 description: "A new Flutter project."
 
 publish_to: 'none' 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
-
+  sdk: '>=3.2.5 <4.0.0'
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^1.0.2
+  velocity_x: ^4.1.2
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
-  cupertino_icons: ^1.0.2
-  velocity_x: ^4.0.0
-  get: ^4.6.6
   cloud_firestore: ^4.14.0
   flutter_spinkit: ^5.2.0
+  get: ^4.6.6
 
 dev_dependencies:
   flutter_test:
@@ -24,8 +23,10 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
 
+
 flutter:
 
+  
   uses-material-design: true
 
   assets:

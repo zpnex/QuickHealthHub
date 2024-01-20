@@ -1,6 +1,6 @@
 {
-    "name": "qhhub",
-    "short_name": "qhhub",
+    "name": "sampleapp",
+    "short_name": "sampleapp",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

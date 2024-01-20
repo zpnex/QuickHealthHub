@@ -1,4 +1,4 @@
-import 'package:qhhub/consts/consts.dart';
+import 'package:sampleapp/consts/consts.dart';
 
 class CustomButton extends StatelessWidget {
   final Function()? onTap;

@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
-import 'package:qhhub/consts/consts.dart';
-import 'package:qhhub/resources/components/customButton.dart';
-import 'package:qhhub/views/book_appointment_view/BookAppointmentView.dart';
+import 'package:sampleapp/consts/consts.dart';
+import 'package:sampleapp/resources/components/customButton.dart';
+import 'package:sampleapp/views/book_appointment_view/BookAppointmentView.dart';
 
 class DoctorProfileView extends StatelessWidget {
   final DocumentSnapshot doc;

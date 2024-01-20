@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:qhhub/consts/colors.dart';
-import 'package:qhhub/views/appointment_view/AppointmentView.dart';
-import 'package:qhhub/views/category_view/CategoryView.dart';
-import 'package:qhhub/views/home_view/HomeView.dart';
-import 'package:qhhub/views/settings_view/settingsView.dart';
+import 'package:sampleapp/consts/colors.dart';
+import 'package:sampleapp/views/appointment_view/AppointmentView.dart';
+import 'package:sampleapp/views/category_view/CategoryView.dart';
+import 'package:sampleapp/views/home_view/HomeView.dart';
+import 'package:sampleapp/views/settings_view/settingsView.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

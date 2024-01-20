@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:qhhub/controllers/appoinment_controller.dart';
-import 'package:qhhub/resources/components/customButton.dart';
-import 'package:qhhub/resources/components/customTextField.dart';
+import 'package:sampleapp/controllers/appoinment_controller.dart';
+import 'package:sampleapp/resources/components/customButton.dart';
+import 'package:sampleapp/resources/components/customTextField.dart';
 
 import '../../consts/consts.dart';
 

@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:qhhub/consts/consts.dart';
-import 'package:qhhub/consts/lists.dart';
-import 'package:qhhub/controllers/home_controller.dart';
-import 'package:qhhub/resources/components/customTextField.dart';
-import 'package:qhhub/views/category_details_view/CategoryDetailsView.dart';
-import 'package:qhhub/views/doctor_profile_view/DoctorProfileView.dart';
-import 'package:qhhub/views/search_view/SearchView.dart';
+import 'package:sampleapp/consts/consts.dart';
+import 'package:sampleapp/consts/lists.dart';
+import 'package:sampleapp/controllers/home_controller.dart';
+import 'package:sampleapp/resources/components/customTextField.dart';
+import 'package:sampleapp/views/category_details_view/CategoryDetailsView.dart';
+import 'package:sampleapp/views/doctor_profile_view/DoctorProfileView.dart';
+import 'package:sampleapp/views/search_view/SearchView.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key});

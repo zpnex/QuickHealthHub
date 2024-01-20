@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:qhhub/consts/consts.dart';
-import 'package:qhhub/controllers/auth_controller.dart';
+import 'package:sampleapp/consts/consts.dart';
+import 'package:sampleapp/controllers/auth_controller.dart';
 
 
 class WaitingScreen extends StatefulWidget {

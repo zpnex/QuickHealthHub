@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:qhhub/consts/consts.dart';
-import 'package:qhhub/controllers/auth_controller.dart';
-import 'package:qhhub/resources/components/customButton.dart';
-import 'package:qhhub/resources/components/customTextField.dart';
-import 'package:qhhub/views/login_view/loginView.dart';
+import 'package:sampleapp/consts/consts.dart';
+import 'package:sampleapp/controllers/auth_controller.dart';
+import 'package:sampleapp/resources/components/customButton.dart';
+import 'package:sampleapp/resources/components/customTextField.dart';
+import 'package:sampleapp/views/login_view/loginView.dart';
 
 class SignupView extends StatefulWidget {
   const SignupView({Key? key}) : super(key: key);

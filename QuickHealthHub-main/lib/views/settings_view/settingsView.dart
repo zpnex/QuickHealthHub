@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:qhhub/consts/consts.dart';
-import 'package:qhhub/consts/lists.dart';
-import 'package:qhhub/controllers/auth_controller.dart';
-import 'package:qhhub/controllers/settings_controller.dart';
-import 'package:qhhub/views/login_view/loginView.dart';
+import 'package:sampleapp/consts/consts.dart';
+import 'package:sampleapp/consts/lists.dart';
+import 'package:sampleapp/controllers/auth_controller.dart';
+import 'package:sampleapp/controllers/settings_controller.dart';
+import 'package:sampleapp/views/login_view/loginView.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});

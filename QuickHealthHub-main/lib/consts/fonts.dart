@@ -1,4 +1,8 @@
-import 'package:qhhub/consts/consts.dart';
+import 'dart:ui';
+
+import 'package:sampleapp/consts/consts.dart';
+
+import 'consts.dart';
 
 class AppFonts {
   static String nunito = "nunito", nunitoBold = "nunito_Bold";

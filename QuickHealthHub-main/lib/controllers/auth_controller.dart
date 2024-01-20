@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:qhhub/consts/consts.dart';
-import 'package:qhhub/views/appointment_view/AppointmentView.dart';
-import 'package:qhhub/views/home_view/Home.dart';
-import 'package:qhhub/views/login_view/loginView.dart';
+import 'package:sampleapp/consts/consts.dart';
+import 'package:sampleapp/views/appointment_view/AppointmentView.dart';
+import 'package:sampleapp/views/home_view/Home.dart';
+import 'package:sampleapp/views/login_view/loginView.dart';
 
 class AuthController extends GetxController {
   var fullnameController = TextEditingController();

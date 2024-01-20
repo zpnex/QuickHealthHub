@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:qhhub/consts/consts.dart';
+import 'package:sampleapp/consts/consts.dart';
+
+import '../consts/consts.dart';
 
 class AppoinmentController extends GetxController {
   var isLoading = false.obs;

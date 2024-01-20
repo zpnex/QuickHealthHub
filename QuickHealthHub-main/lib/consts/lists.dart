@@ -1,4 +1,8 @@
-import 'package:qhhub/consts/consts.dart';
+import 'package:sampleapp/consts/consts.dart';
+
+import 'consts.dart';
+import 'images.dart';
+import 'strings.dart';
 
 var iconList = [
   AppAssets.icBrain,

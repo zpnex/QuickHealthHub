@@ -1,7 +1,7 @@
 import 'package:get/route_manager.dart';
-import 'package:qhhub/consts/consts.dart';
-import 'package:qhhub/consts/lists.dart';
-import 'package:qhhub/views/category_details_view/CategoryDetailsView.dart';
+import 'package:sampleapp/consts/consts.dart';
+import 'package:sampleapp/consts/lists.dart';
+import 'package:sampleapp/views/category_details_view/CategoryDetailsView.dart';
 
 class CategoryView extends StatelessWidget {
   const CategoryView({super.key});

@@ -1,11 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/route_manager.dart';
-import 'package:qhhub/consts/consts.dart';
-import 'package:qhhub/views/landing_page/landingPage.dart';
+import 'package:sampleapp/consts/consts.dart';
+import 'package:sampleapp/views/landing_page/landingPage.dart';
 // import 'package:qhhub/resources/components/waitingScreen.dart';
-import 'package:qhhub/views/login_view/loginView.dart';
-import 'package:qhhub/views/signup_view/SignupView.dart';
-import 'package:qhhub/views/splash_screen/splash_screen_view.dart';
+import 'package:sampleapp/views/login_view/loginView.dart';
+import 'package:sampleapp/views/signup_view/SignupView.dart';
+import 'package:sampleapp/views/splash_screen/splash_screen_view.dart';
+
+import 'views/splash_screen/splash_screen_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

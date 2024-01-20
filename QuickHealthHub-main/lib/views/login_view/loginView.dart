@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
-import 'package:qhhub/consts/consts.dart';
-import 'package:qhhub/controllers/auth_controller.dart';
-import 'package:qhhub/resources/components/customButton.dart';
-import 'package:qhhub/resources/components/customTextField.dart';
-import 'package:qhhub/views/appointment_view/AppointmentView.dart';
-import 'package:qhhub/views/home_view/Home.dart';
-import 'package:qhhub/views/signup_view/SignupView.dart';
+import 'package:sampleapp/consts/consts.dart';
+import 'package:sampleapp/controllers/auth_controller.dart';
+import 'package:sampleapp/resources/components/customButton.dart';
+import 'package:sampleapp/resources/components/customTextField.dart';
+import 'package:sampleapp/views/appointment_view/AppointmentView.dart';
+import 'package:sampleapp/views/home_view/Home.dart';
+import 'package:sampleapp/views/signup_view/SignupView.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

@@ -1,6 +1,6 @@
 
 class AppStrings {
-  static String appName = "QuickHeathHub",
+  static String appName = "QuickHealthHub",
       welcomeBack = "Welcome Back !!!",
       weAreExcited = "We are excited to have you back",
       email = "E-Mail",

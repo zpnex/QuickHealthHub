@@ -3,7 +3,6 @@ import 'package:qhhub/consts/colors.dart';
 import 'package:qhhub/views/appointment_view/AppointmentView.dart';
 import 'package:qhhub/views/category_view/CategoryView.dart';
 import 'package:qhhub/views/home_view/HomeView.dart';
-import 'package:qhhub/views/login_view/loginView.dart';
 import 'package:qhhub/views/settings_view/settingsView.dart';
 
 class Home extends StatefulWidget {
@@ -28,16 +27,16 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: screenList.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: Colors.white.withOpacity(0.5),
-        selectedItemColor: AppColors.whiteColor,
+        unselectedItemColor: Color(0xffffa600).withOpacity(0.5),
+        selectedItemColor: Color(0xffffa600),
         selectedLabelStyle: TextStyle(
           color: AppColors.whiteColor,
         ),
         selectedIconTheme: IconThemeData(
-          color: AppColors.whiteColor,
+          color: Color(0xffffa600),
           ),
 
-        backgroundColor: AppColors.blueColor,
+        backgroundColor: Color(0xffffeac2),
         type: BottomNavigationBarType.fixed,
           currentIndex: selectedIndex,
           onTap: (value) {

@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:qhhub/consts/consts.dart';
@@ -46,7 +45,8 @@ class HomeView extends StatelessWidget {
                   10.widthBox,
                   IconButton(
                     onPressed: () {
-                      Get.to(() => SearchView(SearchQuery: controller.searchQueryController.text));
+                      Get.to(() => SearchView(
+                          SearchQuery: controller.searchQueryController.text));
                     },
                     icon: const Icon(Icons.search),
                     color: AppColors.whiteColor,
@@ -68,7 +68,8 @@ class HomeView extends StatelessWidget {
                       itemBuilder: (BuildContext context, int index) {
                         return GestureDetector(
                           onTap: () {
-                            Get.to(() => CategoryDetailsView(catName: iconsTitleList[index]));
+                            Get.to(() => CategoryDetailsView(
+                                catName: iconsTitleList[index]));
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -77,8 +78,8 @@ class HomeView extends StatelessWidget {
                             ),
                             padding: const EdgeInsets.all(12),
                             margin: const EdgeInsets.only(right: 8),
-                            height: 44,
-                            width: 44,
+                            height: 20,
+                            width: 90,
                             child: Column(
                               children: [
                                 Image.asset(
@@ -103,7 +104,7 @@ class HomeView extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: AppStyles.bold(
-                      title: "Popular Doctors",
+                      title: "Doctors",
                       color: AppColors.blueColor,
                       size: AppSizes.size18,
                     ),
@@ -111,7 +112,8 @@ class HomeView extends StatelessWidget {
                   10.heightBox,
                   FutureBuilder<QuerySnapshot>(
                     future: controller.getDoctorList(),
-                    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                    builder: (BuildContext context,
+                        AsyncSnapshot<QuerySnapshot> snapshot) {
                       if (!snapshot.hasData) {
                         return const Center(
                           child: CircularProgressIndicator(),
@@ -126,12 +128,15 @@ class HomeView extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             itemCount: data?.length ?? 0,
                             itemBuilder: (BuildContext context, int index) {
-                              var docData = data![index].data() as Map<String, dynamic>;
+                              var docData =
+                                  data![index].data() as Map<String, dynamic>;
 
-                              if (docData.containsKey('docName') && docData.containsKey('docCategory')) {
+                              if (docData.containsKey('docName') &&
+                                  docData.containsKey('docCategory')) {
                                 return GestureDetector(
                                   onTap: () {
-                                    Get.to(() => DoctorProfileView(doc: data[index]));
+                                    Get.to(() =>
+                                        DoctorProfileView(doc: data[index]));
                                   },
                                   child: Container(
                                     clipBehavior: Clip.hardEdge,
@@ -168,10 +173,9 @@ class HomeView extends StatelessWidget {
                                   ),
                                 );
                               } else {
-                                // Handle the case where the required fields are missing
                                 return Container(
-                                  // You can customize this container to show a placeholder or handle it differently
-                                  child: Text('Missing required fields in document at index $index'),
+                                  child: Text(
+                                      'Missing required fields in document at index $index'),
                                 );
                               }
                             },

@@ -18,7 +18,7 @@ class AppointmentView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: AppStyles.bold(
-          title: "Category name",
+          title: "Appointments",
           color: AppColors.blueColor,
           size: AppSizes.size18,
         ),

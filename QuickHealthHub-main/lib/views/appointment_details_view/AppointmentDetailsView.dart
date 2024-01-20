@@ -31,7 +31,7 @@ class AppointmentDetailsView extends StatelessWidget {
             10.heightBox,
             AppStyles.bold(title: "Mobile Number"),
             AppStyles.normal(title: doc['appMobile']),
-            10.heightBox, 
+            10.heightBox,
             AppStyles.bold(title: "Full Name"),
             AppStyles.normal(title:doc['appName']),
             10.heightBox,

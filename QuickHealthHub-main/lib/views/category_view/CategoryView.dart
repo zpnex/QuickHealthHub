@@ -34,7 +34,7 @@ class CategoryView extends StatelessWidget {
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: AppColors.bgDarkColor,
+                  color: Color(0xffffeac2),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +45,7 @@ class CategoryView extends StatelessWidget {
                         child: Image.asset(
                           iconList[index],
                           width: 60,
-                          color: Vx.randomPrimaryColor,
+                          color: Color(0xffffa600),
                         )),
                     30.heightBox,
                     AppStyles.bold(
@@ -54,7 +54,7 @@ class CategoryView extends StatelessWidget {
                         size: AppSizes.size16),
                     10.heightBox,
                     AppStyles.normal(
-                        title: "13 specialists",
+                        title: "specialists",
                         color: AppColors.textColor.withOpacity(0.5),
                         size: AppSizes.size12),
                   ],

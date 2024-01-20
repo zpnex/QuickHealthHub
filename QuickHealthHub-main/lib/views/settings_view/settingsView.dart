@@ -3,7 +3,7 @@ import 'package:qhhub/consts/consts.dart';
 import 'package:qhhub/consts/lists.dart';
 import 'package:qhhub/controllers/auth_controller.dart';
 import 'package:qhhub/controllers/settings_controller.dart';
-import 'package:qhhub/views/loginView/loginView.dart';
+import 'package:qhhub/views/login_view/loginView.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
